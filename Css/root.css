@@ -3,6 +3,7 @@
 :root {
     --gray-text-color: gray;
     --lightgray-text-color: lightgray;
+    --white-text-color: whitesmoke;
     --very-lightgray-text-color: rgba(211, 211, 211, .2);
     --primary-color: rgba(135, 206, 235, .4);
     --primary-full-color: rgba(135, 206, 235, .8);

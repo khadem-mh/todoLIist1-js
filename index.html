@@ -12,21 +12,49 @@
 
 <body>
 
-    <section class="parent-todolist">
+    <div class="container-todolist">
 
-        <header class="parent-todolist__header">
-            <h2 class="parent-todolist__title">To-Do List</h2>
-            <i class="bi bi-clipboard-data parent-todolist__icon"></i>
-        </header>
+        <aside class="parent-sidebar-left">
+            <section>
 
-        <form class="parent-todolist__form">
-            <div class="parent-todolist__parent-inp">
-                <input type="text" placeholder="Add Your Task">
-                <button>Add Todo</button>
-            </div>
-        </form>
+                <header class="parent-sidebar-left__header">
+                    <i class="bi bi-clipboard-data parent-sidebar-left__icon"></i>
+                    <h2 class="parent-sidebar-left__title">To-Do List</h2>
+                </header>
 
-    </section>
+                <p class="parent-sidebar-left__list">My Lists</p>
+
+                <section class="parent-sidebar-left__container-newlist">
+                    <div class="parent-sidebar-left__parent-newlist">
+                        <i class="bi bi-plus"></i>
+                        <p class="parent-sidebar-left__newlist">New List</p>
+                    </div>
+                </section>
+
+                <ul class="parent-sidebar-left__lists">
+                    <li>project A</li>
+                </ul>
+
+            </section>
+        </aside>
+
+
+        <section class="parent-todolist">
+
+            <form class="parent-todolist__form">
+                <div class="parent-todolist__parent-inp">
+                    <input type="text" placeholder="Add Your Task">
+                    <button>Add Todo</button>
+                </div>
+            </form>
+
+        </section>
+
+        <aside class="parent-sidebar-right">
+
+        </aside>
+
+    </div>
 
     <script src="./Js/app.js"></script>
 </body>
