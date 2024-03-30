@@ -1,14 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TodoList From Js</title>
     <link rel="stylesheet" href="./Css/normalize.css">
     <link rel="stylesheet" href="./Css/style.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
 </head>
+
 <body>
-    
+
+    <section class="parent-todolist">
+
+        <header class="parent-todolist__header">
+            <h2 class="parent-todolist__title">To-Do List</h2>
+            <i class="bi bi-clipboard-data parent-todolist__icon"></i>
+        </header>
+
+        <form class="parent-todolist__form">
+            <div class="parent-todolist__parent-inp">
+                <input type="text" placeholder="Add Your Task">
+                <button>Add Todo</button>
+            </div>
+        </form>
+
+    </section>
+
     <script src="./Js/app.js"></script>
 </body>
+
 </html>

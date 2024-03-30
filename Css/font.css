@@ -1,0 +1,9 @@
+@font-face {
+    font-family: Maven_Pro;
+    src: url('../Font/Maven_Pro/MavenPro-VariableFont_wght.ttf'), format("truetype");
+}
+
+@font-face {
+    font-family: Space_Mono;
+    src: url('../Font/Space_Mono/SpaceMono-Bold.ttf'), format("truetype");
+}
