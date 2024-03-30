@@ -32,7 +32,7 @@ input::placeholder {
     box-shadow: 0 0 15px var(--lightgray-text-color);
     border-radius: .5rem;
     padding: 1rem;
-    border: 1px dashed var(--lightgray-text-color);
+    width: 20rem;
 }
 
 .parent-todolist__header {
@@ -67,11 +67,12 @@ input::placeholder {
 }
 
 .parent-todolist__parent-inp {
-    background-color: var(--very-lightgray-text-color);
+    background-color: rgba(135, 206, 235, .1);
+    border: 2px solid var(--primary-color);
     border-radius: .5rem;
     display: flex;
     align-items: stretch;
-    border: 1px solid var(--lightgray-text-color);
+    justify-content: space-between;
 }
 
 .parent-todolist__parent-inp input {
@@ -79,13 +80,19 @@ input::placeholder {
     background-color: transparent;
     color: var(--black-color);
     padding: .5rem .8rem;
+    font-size: .6rem;
+    width: 70%;
+    letter-spacing: .1rem;
 }
 
 .parent-todolist__parent-inp button {
+    color: white;
+    text-shadow: 2px 0 2px var(--gray-text-color);
     border: 0;
     background-color: var(--primary-color);
     border-radius: .3rem;
     cursor: pointer;
+    font-size: .6rem;
 }
 
 .parent-todolist__parent-inp button:hover {
