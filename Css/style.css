@@ -200,6 +200,8 @@ input::placeholder {
     width: 25%;
     height: 100vh;
     background-color: var(--black-color);
+    border-bottom-left-radius: 5rem;
+    border-top-left-radius: 5rem;
 }
 
 /*? end styles sidbare right */
