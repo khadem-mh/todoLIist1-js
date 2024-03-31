@@ -21,9 +21,12 @@ input::placeholder {
 .parent-sidebar__icon,
 .parent-sidebar__title,
 .parent-todolist__parent-inp button,
-.parent-sidebar-left__parent-newlist {
-    transition: all 300ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+.parent-sidebar-left__parent-newlist,
+.parent-sidebar-left__lists li:not(.active-list),
+.parent-sidebar-left__lists li .bi-x {
+    transition: all 400ms ease;
 }
+
 /* end styles helper */
 
 .container-todolist {
@@ -38,6 +41,8 @@ input::placeholder {
     height: 100vh;
     background-color: var(--black-color);
     font-family: var(--font-maven);
+    border-bottom-right-radius: 5rem;
+    border-top-right-radius: 5rem;
 }
 
 .parent-sidebar-left section {
@@ -55,7 +60,7 @@ input::placeholder {
     margin-right: .5rem;
     font-size: 2.8rem;
     border-radius: .5rem;
-    color: var(--primary-full-color);
+    color: var(--primary-color);
 }
 
 .parent-sidebar-left__title {
@@ -70,58 +75,82 @@ input::placeholder {
 .parent-sidebar-left__list {
     position: relative;
     font-weight: bold;
-    padding-left: 1.8rem;
     font-size: 1.8rem;
-}
-
-.parent-sidebar-left__list::after,
-.parent-sidebar-left__list::before {
-    content: "";
-    background-color: var(--primary-color);
-    position: absolute;
-    bottom: 3px;
+    padding: 0rem .5rem;
 }
 
 .parent-sidebar-left__list::after {
-    width: 35%;
-    height: 5px;
-    right: 0px;
-}
-
-.parent-sidebar-left__list::before {
-    border-radius: .2rem;
-    width: 20px;
-    height: 20px;
-    left: 0px;
+    content: "";
+    background-color: gray;
+    position: absolute;
+    bottom: 3px;   
+    right: 100px;
+    bottom: 10px;
+    width: 30px;
+    height: 4px;
 }
 
 .parent-sidebar-left__container-newlist {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .parent-sidebar-left__parent-newlist {
     user-select: none;
     cursor: pointer;
-    background-color: rgba(24, 26, 27, .3);
-    border-radius: .5rem;
+    border-radius: 50rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 .8rem 0 .4rem;
+
     width: fit-content;
     height: 3rem;
     color: lightgray;
     font-size: 1.4rem;
 }
 
-.parent-sidebar-left__parent-newlist:hover {
-    color: var(--primary-full-color);
+.parent-sidebar-left__parent-newlist:hover {    
+    padding: 0 .8rem 0 .4rem;
+    background-color: rgba(24, 26, 27, .8);
 }
 
-.parent-sidebar-left__newlist {
-    margin-left: .3rem;
+.parent-sidebar-left__lists {
+    list-style: none;
+    line-height: 2.5rem;
+    font-size: 1.4rem;
+    color: lightgrey;
+    padding: 0;
+}
+
+.parent-sidebar-left__lists li.active-list {
+    background-color: var(--primary-color);
+    border-radius: 50rem;
+    padding: .8rem 1rem;
+    color: var(--black-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.parent-sidebar-left__lists li .bi-x {
+    font-size: 2rem;
+}
+
+.parent-sidebar-left__lists li .bi-x:hover {
+    color: whitesmoke;
+}
+
+.parent-sidebar-left__lists li {
+    margin: 1rem 0 1rem .5rem;
+    padding: .8rem 1rem;
+    cursor: pointer;
+    color: var(--white-text-color);
+    font-weight: bold;
+}
+
+.parent-sidebar-left__lists li:not(.active-list):hover {
+    color: var(--primary-color);
 }
 
 /*! end styles sidbare left */
@@ -161,8 +190,9 @@ input::placeholder {
 }
 
 .parent-todolist__parent-inp button:hover {
-    background-color: var(--primary-full-color);
+    background-color: var(--primary-color);
 }
+
 /* end styles main */
 
 /*? start styles sidbare right */
@@ -171,4 +201,5 @@ input::placeholder {
     height: 100vh;
     background-color: var(--black-color);
 }
+
 /*? end styles sidbare right */
