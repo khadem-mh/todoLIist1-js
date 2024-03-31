@@ -38,7 +38,7 @@ input::placeholder {
 /*! start styles sidbare left */
 .parent-sidebar-left {
     width: 20%;
-    height: 100vh;
+    min-height: 100vh;
     background-color: var(--black-color);
     font-family: var(--font-maven);
     border-bottom-right-radius: 5rem;
@@ -198,7 +198,7 @@ input::placeholder {
 /*? start styles sidbare right */
 .parent-sidebar-right {
     width: 25%;
-    height: 100vh;
+    min-height: 100vh;
     background-color: var(--black-color);
     border-bottom-left-radius: 5rem;
     border-top-left-radius: 5rem;
