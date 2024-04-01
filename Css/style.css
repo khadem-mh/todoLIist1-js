@@ -165,8 +165,21 @@ input::placeholder {
     justify-content: flex-start;
 }
 
+.title-main,
+.sub-title-main {
+    font-family: var(--font-maven);
+}
+
 .title-main {
     margin-top: 9rem;
+    margin-bottom: .8rem;
+    font-size: 3.8rem;
+}
+
+.sub-title-main {
+    margin: 0 0 3.5rem 0;
+    font-size: 3rem;
+    color: var(--gray-text-color);
 }
 
 .parent-todolist__parent-inp {
