@@ -158,7 +158,15 @@ input::placeholder {
 /* start styles main */
 .parent-todolist {
     width: 55%;
-    padding: 0 14rem;
+    padding: 0 11rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.title-main {
+    margin-top: 9rem;
 }
 
 .parent-todolist__parent-inp {
@@ -192,7 +200,6 @@ input::placeholder {
 .parent-todolist__parent-inp button:hover {
     background-color: var(--primary-color);
 }
-
 /* end styles main */
 
 /*? start styles sidbare right */
