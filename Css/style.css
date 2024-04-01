@@ -221,7 +221,7 @@ input::placeholder {
 .parent-todolist__parent-inp input {
     border: 0;
     background-color: transparent;
-    color: var(--white-text-color);
+    color: var(--primary-color);
     padding: 1rem .8rem;
     font-size: 1.3rem;
     width: 70%;
