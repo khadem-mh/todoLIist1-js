@@ -83,7 +83,7 @@ input::placeholder {
     content: "";
     background-color: gray;
     position: absolute;
-    bottom: 3px;   
+    bottom: 3px;
     right: 100px;
     bottom: 10px;
     width: 30px;
@@ -110,7 +110,7 @@ input::placeholder {
     font-size: 1.4rem;
 }
 
-.parent-sidebar-left__parent-newlist:hover {    
+.parent-sidebar-left__parent-newlist:hover {
     padding: 0 .8rem 0 .4rem;
     background-color: rgba(24, 26, 27, .8);
 }
@@ -166,14 +166,31 @@ input::placeholder {
 }
 
 .parent-todolist__header {
+    margin-top: 2rem;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    position: relative;
 }
 
 .parent-todolist__header-left {
     font-family: var(--font-maven);
     font-weight: bold;
+    font-size: 2.6rem;
+    position: absolute;
+    left: -4.5rem;  
+    color: var(--lightgray-text-color);
+    user-select: none;
+}
+
+.parent-todolist__header-left p, .parent-todolist__header-left h3  {
+    margin: 0;
+    text-align: center;
+}
+
+.parent-todolist__header-right {
+    margin-left: 3rem;
 }
 
 .title-main,
@@ -182,7 +199,6 @@ input::placeholder {
 }
 
 .title-main {
-    margin-top: 9rem;
     margin-bottom: .8rem;
     font-size: 3.8rem;
 }
@@ -194,7 +210,7 @@ input::placeholder {
 }
 
 .parent-todolist__parent-inp {
-    background-color: rgba(135, 206, 235, .2);
+    background-color: rgba(207, 163, 80, .2);
     border: 2px solid var(--primary-color);
     border-radius: .5rem;
     display: flex;
@@ -206,7 +222,7 @@ input::placeholder {
     border: 0;
     background-color: transparent;
     color: var(--white-text-color);
-    padding: .7rem .8rem;
+    padding: 1rem .8rem;
     font-size: 1.3rem;
     width: 70%;
     letter-spacing: .1rem;
@@ -224,6 +240,7 @@ input::placeholder {
 .parent-todolist__parent-inp button:hover {
     background-color: var(--primary-color);
 }
+
 /* end styles main */
 
 /*? start styles sidbare right */
