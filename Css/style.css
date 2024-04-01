@@ -165,6 +165,17 @@ input::placeholder {
     justify-content: flex-start;
 }
 
+.parent-todolist__header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.parent-todolist__header-left {
+    font-family: var(--font-maven);
+    font-weight: bold;
+}
+
 .title-main,
 .sub-title-main {
     font-family: var(--font-maven);
