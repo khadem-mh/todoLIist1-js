@@ -155,7 +155,7 @@ input::placeholder {
 
 /*! end styles sidbare left */
 
-/* start styles main */
+/** start styles main */
 .parent-todolist {
     width: 55%;
     padding: 0 11rem;
@@ -179,12 +179,13 @@ input::placeholder {
     font-weight: bold;
     font-size: 2.6rem;
     position: absolute;
-    left: -4.5rem;  
+    left: -4.5rem;
     color: var(--lightgray-text-color);
     user-select: none;
 }
 
-.parent-todolist__header-left p, .parent-todolist__header-left h3  {
+.parent-todolist__header-left p,
+.parent-todolist__header-left h3 {
     margin: 0;
     text-align: center;
 }
@@ -241,7 +242,33 @@ input::placeholder {
     background-color: var(--primary-color);
 }
 
-/* end styles main */
+.user-todo,
+.user-todo__left,
+.user-todo__right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.user-todo {
+    margin-top: 1.5rem;
+    background-color: var(--black-color);
+    border-radius: .5rem;
+    padding: .5rem 1rem;
+}
+
+.user-todo__info {}
+
+.user-todo__date {}
+
+.user-todo__text {}
+
+.user-todo__right {}
+
+.user-todo__list {}
+
+
+/** end styles main */
 
 /*? start styles sidbare right */
 .parent-sidebar-right {
