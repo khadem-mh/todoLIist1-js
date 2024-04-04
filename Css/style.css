@@ -1,11 +1,15 @@
 @import './root.css';
 
+html {
+    font-size: 95% !important;
+}
+
 body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: var(--font-space);
-    background-color: rgb(24, 26, 27);
+    background-color: #111827;
     color: var(--white-text-color);
 }
 
@@ -27,7 +31,7 @@ input::placeholder {
     cursor: pointer;
 }
 
-input[type="checkbox"]:checked  {
+input[type="checkbox"]:checked {
     background-color: rgba(207, 163, 80, .5);
 }
 
@@ -51,12 +55,13 @@ input[type="checkbox"]:checked  {
 
 /*! start styles sidbare left */
 .parent-sidebar-left {
-    width: 20%;
-    min-height: 100vh;
+    width: 20rem;
+    min-height: 75vh;
     background-color: var(--black-color);
     font-family: var(--font-maven);
-    border-bottom-right-radius: 5rem;
-    border-top-right-radius: 5rem;
+    box-shadow: 0px 0px 20px var(--primary-color);
+    border-radius: 3.5rem;
+    margin-left: 1rem;
 }
 
 .parent-sidebar-left section {
@@ -87,21 +92,9 @@ input[type="checkbox"]:checked  {
 }
 
 .parent-sidebar-left__list {
-    position: relative;
     font-weight: bold;
     font-size: 1.8rem;
     padding: 0rem .5rem;
-}
-
-.parent-sidebar-left__list::after {
-    content: "";
-    background-color: gray;
-    position: absolute;
-    bottom: 3px;
-    right: 100px;
-    bottom: 10px;
-    width: 30px;
-    height: 4px;
 }
 
 .parent-sidebar-left__container-newlist {
@@ -171,7 +164,7 @@ input[type="checkbox"]:checked  {
 
 /** start styles main */
 .parent-todolist {
-    width: 55%;
+    width: 55rem;
     padding: 0 11rem;
     min-height: 100vh;
     display: flex;
@@ -316,7 +309,7 @@ input[type="checkbox"]:checked  {
 
 /*? start styles sidbare right */
 .parent-sidebar-right {
-    width: 25%;
+    width: 25rem;
     min-height: 100vh;
     background-color: var(--black-color);
     border-bottom-left-radius: 5rem;
