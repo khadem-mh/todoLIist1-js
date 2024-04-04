@@ -310,10 +310,10 @@ input[type="checkbox"]:checked {
 /*? start styles sidbare right */
 .parent-sidebar-right {
     width: 25rem;
-    min-height: 100vh;
+    min-height: 95vh;
     background-color: var(--black-color);
-    border-bottom-left-radius: 5rem;
-    border-top-left-radius: 5rem;
+    border-radius: 3.5rem;
+    margin-right: 1rem;
 }
 
 /*? end styles sidbare right */
