@@ -74,6 +74,10 @@
     .parent-todolist {
         width: 65rem;
     }
+    
+    .parent-todolist__header-left {
+        font-size: 2.2rem;
+    }
 }
 
 @media screen and (max-width: 1100px) {
@@ -85,6 +89,15 @@
         width: 55rem;
         padding: 0 9rem;
     }
+
+    .parent-todolist__header-right {
+        margin-left: 2rem;
+    }
+
+    .parent-todolist__header-left {
+        font-size: 2rem;
+    }
+
 }
 
 @media screen and (max-width: 992px) {
