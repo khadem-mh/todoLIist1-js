@@ -27,6 +27,10 @@ input::placeholder {
     cursor: pointer;
 }
 
+input[type="checkbox"]:checked  {
+    background-color: rgba(207, 163, 80, .5);
+}
+
 .parent-sidebar__icon,
 .parent-sidebar__title,
 .parent-todolist__parent-inp button,
