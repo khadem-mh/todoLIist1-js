@@ -18,6 +18,15 @@ input::placeholder {
     color: var(--lightgray-text-color);
 }
 
+[type="checkbox"] {
+    appearance: none;
+    box-sizing: border-box;
+    padding: .6rem;
+    border-radius: 1rem;
+    border: 2px solid var(--primary-color);
+    cursor: pointer;
+}
+
 .parent-sidebar__icon,
 .parent-sidebar__title,
 .parent-todolist__parent-inp button,
@@ -298,7 +307,6 @@ input::placeholder {
 .user-todo__list {
     color: var(--lightgray-text-color);
 }
-
 
 /** end styles main */
 
