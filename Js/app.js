@@ -1,3 +1,5 @@
+import monthNames from "./monthNames"
+
 const dateMonth = document.querySelector('.month')
 const dateToday = document.querySelector('.today') 
 const date = new Date()

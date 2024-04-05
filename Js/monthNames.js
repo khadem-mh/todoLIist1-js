@@ -8,3 +8,5 @@ const monthNames = [
     'Oct',
     'Nov'
 ]
+
+export default monthNames
