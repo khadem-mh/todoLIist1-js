@@ -26,6 +26,14 @@
         width: 29rem;
         min-height: 90vh;
     }
+
+    .title-main {
+        font-size: 3.4rem;
+    }
+
+    .sub-title-main {
+        font-size: 2.6rem;
+    }
 }
 
 @media screen and (max-width: 1300px) {
@@ -53,15 +61,6 @@
 }
 
 @media screen and (max-width: 1200px) {
-    .parent-sidebar-left {
-        width: 35rem;
-        min-height: 63vh;
-    }
-
-    .parent-sidebar-right {
-        width: 40rem;
-        min-height: 83vh;
-    }
 
     .title-main {
         font-size: 2.9rem;
@@ -70,11 +69,11 @@
     .sub-title-main {
         font-size: 2rem;
     }
-
-    .parent-todolist {
-        width: 65rem;
-    }
     
+    .parent-todolist{
+        padding: 0 7rem;
+    }
+
     .parent-todolist__header-left {
         font-size: 2.2rem;
     }
@@ -85,9 +84,12 @@
         font-size: 65% !important;
     }
 
-    .parent-todolist {
-        width: 55rem;
-        padding: 0 9rem;
+    .parent-sidebar-left {
+        width: 30rem;
+    }
+
+    .parent-sidebar-right {
+        width: 34rem;
     }
 
     .parent-todolist__header-right {
@@ -102,6 +104,6 @@
 
 @media screen and (max-width: 992px) {
     html {
-        font-size: 50% !important;
+        font-size: 60% !important;
     }
 }
