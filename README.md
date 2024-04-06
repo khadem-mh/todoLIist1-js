@@ -15,6 +15,8 @@ let's go
 >> 
 >> ![](https://readme-typing-svg.demolab.com?font=Fira+Code&size=16&duration=1500&pause=5000&color=FAFF09&random=false&width=100&height=25&lines=JavaScript)
 
+>### Packages
+>> ![](https://readme-typing-svg.demolab.com?font=Fira+Code&size=16&duration=1500&pause=5000&color=CB58F7FF&random=false&width=150&height=25&lines=Bootstrap+Icons)
 ___
 >### Social Network
 > [<img src="./Images/github.png" width="30">](https://github.com/khadem-mh)
