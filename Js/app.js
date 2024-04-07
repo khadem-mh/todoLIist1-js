@@ -8,3 +8,5 @@ const dateToday = document.querySelector('.today')
 const date = new Date()
 dateToday.innerHTML = date.getDay()
 dateMonth.innerHTML = monthNames[date.getMonth()] 
+
+addNewList.addEventListener('click', addNewListHandler)
