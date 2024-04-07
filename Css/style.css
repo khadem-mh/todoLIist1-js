@@ -41,7 +41,8 @@ input[type="checkbox"]:checked {
 .parent-sidebar-left__parent-newlist,
 .parent-sidebar-left__lists li:not(.active-list),
 .parent-sidebar-left__lists li .bi-x,
-.user-todo__right i {
+.user-todo__right i,
+.modal-hide {
     transition: all 400ms ease;
 }
 
@@ -318,3 +319,14 @@ input[type="checkbox"]:checked {
 }
 
 /*? end styles sidbare right */
+
+/* MODAL */
+.modal-hide {
+    display: none;
+}
+
+.modal-visible {
+    display: none;
+}
+
+/* MODAL */
