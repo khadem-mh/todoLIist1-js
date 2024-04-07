@@ -8,16 +8,17 @@ const dateMonth = document.querySelector('.month')
 const dateToday = document.querySelector('.today')
 
 const addNewListHandler = () => {
-    if (condition) {
+    if (parentModal.classList.contains('modal-hide')) {
         parentModal.classList.remove('modal-hide')
         parentModal.classList.add('modal-visible')
     } else {
-
+        parentModal.classList.remove('modal-visible')
+        parentModal.classList.add('modal-hide')
     }
 }
 
 const btnSetNewNameListHandler = () => {
-
+    console.log(inpNewListName);
 }
 
 const date = new Date()
