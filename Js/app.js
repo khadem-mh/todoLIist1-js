@@ -4,6 +4,9 @@ const addNewList = document.querySelector('#addNewList')
 const dateMonth = document.querySelector('.month')
 const dateToday = document.querySelector('.today') 
 
+const addNewListHandler = () => {
+    
+}
 
 const date = new Date()
 dateToday.innerHTML = date.getDay()
