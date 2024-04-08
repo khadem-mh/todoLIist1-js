@@ -42,3 +42,17 @@
 .wrapper-box-modal p span {
     color: var(--primary-color);
 }
+
+.wrapper-box-modal input::placeholder {
+    color: var(--primary-color);
+}
+
+.wrapper-box-modal input {
+    width: 365px;
+    border: 0;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    color: var(--primary-color);
+    background-color: rgba(254, 207, 119, .2);
+}
