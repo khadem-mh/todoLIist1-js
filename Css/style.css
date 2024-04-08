@@ -321,9 +321,9 @@ input[type="checkbox"]:checked {
 /*? end styles sidbare right */
 
 /* MODAL */
-.modal-hide {
+/* .modal-hide {
     display: none;
-}
+} */
 
 .modal-visible {
     display: block;
