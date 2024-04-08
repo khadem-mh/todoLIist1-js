@@ -56,3 +56,13 @@
     color: var(--primary-color);
     background-color: rgba(254, 207, 119, .2);
 }
+
+.wrapper-box-modal button {
+    border: 0;
+    background-color: rgba(254, 207, 119, .6);
+    border-radius: .5rem;
+    padding: 1rem;
+    color: var(--white-text);
+    font-size: 1rem;
+    cursor: pointer;
+}
