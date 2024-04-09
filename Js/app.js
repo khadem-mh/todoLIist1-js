@@ -23,10 +23,12 @@ const addNewListHandler = () => {
 }
 
 const btnSetNewNameListHandler = () => {
-    console.log(inpNewListName.value);
+    let inpName = inpNewListName.value
+    if (inpName.length) {
+        parentModal.classList.remove('modal-visible')
+        parentModal.classList.add('modal-hide')
+    }
     inpNewListName.value = ''
-    parentModal.classList.remove('modal-visible')
-    parentModal.classList.add('modal-hide')
 }
 
 const btnCloseModalHandler = () => {
