@@ -8,6 +8,10 @@ const dateMonth = document.querySelector('.month')
 const dateToday = document.querySelector('.today')
 const btnCloseModal = document.querySelector('#btnCloseModal')
 
+const date = new Date()
+dateToday.innerHTML = date.getDay()
+dateMonth.innerHTML = monthNames[date.getMonth()]
+
 const addNewListHandler = () => {
     if (parentModal.classList.contains('modal-hide')) {
         parentModal.classList.remove('modal-hide')
@@ -25,9 +29,10 @@ const btnSetNewNameListHandler = () => {
     parentModal.classList.add('modal-hide')
 }
 
-const date = new Date()
-dateToday.innerHTML = date.getDay()
-dateMonth.innerHTML = monthNames[date.getMonth()]
+const btnCloseModalHandler = () => {
+
+}
 
 addNewList.addEventListener('click', addNewListHandler)
 btnSetNewNameList.addEventListener('click', btnSetNewNameListHandler)
+btnCloseModal.addEventListener('click', btnCloseModalHandler)
