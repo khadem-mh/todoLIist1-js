@@ -30,7 +30,7 @@ const btnSetNewNameListHandler = () => {
 }
 
 const btnCloseModalHandler = () => {
-
+    console.log('ok');
 }
 
 addNewList.addEventListener('click', addNewListHandler)
