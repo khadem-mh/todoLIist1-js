@@ -6,6 +6,7 @@ const btnSetNewNameList = document.querySelector('#btnSetNewNameList')
 const parentModal = document.querySelector('#parentModal')
 const dateMonth = document.querySelector('.month')
 const dateToday = document.querySelector('.today')
+const btnCloseModal = document.querySelector('#btnCloseModal')
 
 const addNewListHandler = () => {
     if (parentModal.classList.contains('modal-hide')) {
