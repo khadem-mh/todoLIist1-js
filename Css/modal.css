@@ -59,7 +59,7 @@
 
 .wrapper-box-modal button {
     border: 0;
-    background-color: rgba(254, 207, 119, .6);
+    background-color: rgba(221, 175, 91, 0.8);
     border-radius: .5rem;
     padding: 1rem;
     color: var(--white-text);
