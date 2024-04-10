@@ -1,5 +1,5 @@
 const handleMangeClass = (parent, addClass = "", removeClass = "") => {
-    parent.classList.remove(removeClass)
-    parent.classList.add(addClass)
+    removeClass.length && parent.classList.remove(removeClass)
+    addClass.length && parent.classList.add(addClass)
 }
 export default handleMangeClass
