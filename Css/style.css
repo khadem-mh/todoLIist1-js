@@ -42,7 +42,8 @@ input[type="checkbox"]:checked {
 .parent-sidebar-left__lists li:not(.active-list),
 .parent-sidebar-left__lists li .bi-x,
 .user-todo__right i,
-.modal-hide {
+.modal-hide,
+.modal-visible {
     transition: all 400ms ease;
 }
 
