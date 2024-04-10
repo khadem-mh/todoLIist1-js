@@ -1,4 +1,5 @@
 import monthNames from "./monthNames.js"
+import handleMangeClass from "./Funcs/handleMangeClass.js"
 //Elements
 const addNewList = document.querySelector('#addNewList')
 const inpNewListName = document.querySelector('#inpNewListName')
@@ -13,28 +14,19 @@ dateToday.innerHTML = date.getDay()
 dateMonth.innerHTML = monthNames[date.getMonth()]
 
 const addNewListHandler = () => {
-    if (parentModal.classList.contains('modal-hide')) {
-        parentModal.classList.remove('modal-hide')
-        parentModal.classList.add('modal-visible')
-    } else {
-        parentModal.classList.remove('modal-visible')
-        parentModal.classList.add('modal-hide')
-    }
+    if (parentModal.classList.contains('modal-hide')) handleMangeClass(parentModal, 'modal-visible', 'modal-hide')
+    else handleMangeClass(parentModal, 'modal-visible', 'modal-hide')
 }
 
 const btnSetNewNameListHandler = () => {
     let inpName = inpNewListName.value
-    if (inpName.length) {
-        parentModal.classList.remove('modal-visible')
-        parentModal.classList.add('modal-hide')
-    }
+    if (inpName.length) handleMangeClass(parentModal, 'modal-hide', 'modal-visible')
     inpNewListName.value = ''
 }
 
 const btnCloseModalHandler = () => {
     inpNewListName.value = ''
-    parentModal.classList.remove('modal-visible')
-    parentModal.classList.add('modal-hide')
+    handleMangeClass(parentModal, 'modal-hide', 'modal-visible')
 }
 
 addNewList.addEventListener('click', addNewListHandler)
