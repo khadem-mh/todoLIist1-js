@@ -20,9 +20,9 @@ const addNewListHandler = () => {
 }
 
 const inputKeyCodeHandler = (e) => {
-   if (e.key === 'Enter') {
-    console.log('ok');
-   }
+    if (e.key === 'Enter') {
+        btnSetNewNameListHandler()
+    }
 }
 
 const btnSetNewNameListHandler = () => {
