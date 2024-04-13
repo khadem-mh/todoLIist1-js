@@ -19,11 +19,9 @@ const addNewListHandler = () => {
     else handleMangeClass(parentModal, 'modal-visible', 'modal-hide')
 }
 
-const inputKeyCodeHandler = (e) => {
-    if (e.key === 'Enter') {
-        btnSetNewNameListHandler()
-    }
-}
+const inputKeyCodeHandler = e => e.key === 'Enter' && btnSetNewNameListHandler()
+
+const closeKeyCodeHandler = e => e.key === 'Escape' && parentModal.classList.contains('modal-visible') && btnCloseModalHandler()
 
 const btnSetNewNameListHandler = () => {
     let inpName = inpNewListName.value
@@ -56,5 +54,6 @@ const btnCloseModalHandler = () => {
 
 addNewList.addEventListener('click', addNewListHandler)
 btnSetNewNameList.addEventListener('click', btnSetNewNameListHandler)
-inpNewListName.addEventListener('keydown', inputKeyCodeHandler)
 btnCloseModal.addEventListener('click', btnCloseModalHandler)
+inpNewListName.addEventListener('keydown', inputKeyCodeHandler)
+window.addEventListener('keydown', closeKeyCodeHandler)
