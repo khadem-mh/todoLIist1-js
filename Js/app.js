@@ -14,6 +14,8 @@ const date = new Date()
 dateToday.innerHTML = date.getDay()
 dateMonth.innerHTML = monthNames[date.getMonth()]
 
+//Funcs
+
 const addNewListHandler = () => {
     if (parentModal.classList.contains('modal-hide')) handleMangeClass(parentModal, 'modal-visible', 'modal-hide')
     else handleMangeClass(parentModal, 'modal-visible', 'modal-hide')
@@ -52,6 +54,7 @@ const btnCloseModalHandler = () => {
     handleMangeClass(parentModal, 'modal-hide', 'modal-visible')
 }
 
+//Events
 addNewList.addEventListener('click', addNewListHandler)
 btnSetNewNameList.addEventListener('click', btnSetNewNameListHandler)
 btnCloseModal.addEventListener('click', btnCloseModalHandler)
