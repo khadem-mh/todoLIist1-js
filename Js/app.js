@@ -19,6 +19,10 @@ const addNewListHandler = () => {
     else handleMangeClass(parentModal, 'modal-visible', 'modal-hide')
 }
 
+const inputKeyCodeHandler = (e) => {
+   
+}
+
 const btnSetNewNameListHandler = () => {
     let inpName = inpNewListName.value
     if (inpName.length) {
@@ -50,4 +54,5 @@ const btnCloseModalHandler = () => {
 
 addNewList.addEventListener('click', addNewListHandler)
 btnSetNewNameList.addEventListener('click', btnSetNewNameListHandler)
+inpNewListName.addEventListener('keydown', inputKeyCodeHandler)
 btnCloseModal.addEventListener('click', btnCloseModalHandler)
