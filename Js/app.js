@@ -1,17 +1,19 @@
 import monthNames from "./monthNames.js"
 import handleMangeClass from "./Funcs/handleMangeClass.js"
+import handleWelcomeTime from "./Funcs/handleWelcomeTime.js"
 //Elements
 const parentMyList = document.querySelector('#parentMyList')
 const addNewList = document.querySelector('#addNewList')
 const inpNewListName = document.querySelector('#inpNewListName')
 const btnSetNewNameList = document.querySelector('#btnSetNewNameList')
 const parentModal = document.querySelector('#parentModal')
+const titleWelcome = document.querySelector('.title-main')
 const dateMonth = document.querySelector('.month')
 const dateToday = document.querySelector('.today')
 const btnCloseModal = document.querySelector('#btnCloseModal')
 
 const date = new Date()
-console.log(date.getHours());
+titleWelcome.innerHTML = handleWelcomeTime(date.getHours())
 dateToday.innerHTML = date.getDate()
 dateMonth.innerHTML = monthNames[date.getMonth()]
 
