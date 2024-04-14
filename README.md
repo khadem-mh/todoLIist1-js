@@ -38,6 +38,7 @@ Install Node.js and NPM in Windows via Node.js Installer
 ___
 >### Social Network
 > [<img src="./Images/github.png" width="30">](https://github.com/khadem-mh)
-> [<img src="./Images/telegram.png" width="30">](https://web.telegram.org/k/#6411851503)
+> [<img src="./Images/pintrest.png" width="30">](https://pinterest.com/khadem_mh)
+> [<img src="./Images/telegram.png" width="30">](https://t.me/mhkhadem)
 > [<img src="./Images/whatsapp.png" width="30">](https://wa.me/989031335939)
 > [<img src="./Images/wakatimesvg.png" width="130">](https://wakatime.com/@khadem_mh)
