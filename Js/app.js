@@ -11,7 +11,7 @@ const dateToday = document.querySelector('.today')
 const btnCloseModal = document.querySelector('#btnCloseModal')
 
 const date = new Date()
-dateToday.innerHTML = date.getDay()
+dateToday.innerHTML = date.getDate()
 dateMonth.innerHTML = monthNames[date.getMonth()]
 
 //Funcs
