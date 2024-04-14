@@ -10,10 +10,12 @@ const parentModal = document.querySelector('#parentModal')
 const titleWelcome = document.querySelector('.title-main')
 const dateMonth = document.querySelector('.month')
 const dateToday = document.querySelector('.today')
+const determineStatus = document.querySelector('.determine-status')
 const btnCloseModal = document.querySelector('#btnCloseModal')
 
 const date = new Date()
 titleWelcome.innerHTML = handleWelcomeTime(date.getHours())
+determineStatus.innerHTML = date.getHours() >= 0 &&  date.getHours() <= 19 ? "today" : "tonight"
 dateToday.innerHTML = date.getDate()
 dateMonth.innerHTML = monthNames[date.getMonth()]
 
