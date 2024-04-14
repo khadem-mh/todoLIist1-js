@@ -8,3 +8,4 @@ const handleWelcomeTime = hours => {
         }
     } else return console.error('please put number')
 }
+export default handleWelcomeTime
