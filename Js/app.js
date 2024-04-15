@@ -15,7 +15,7 @@ const btnCloseModal = document.querySelector('#btnCloseModal')
 
 const date = new Date()
 titleWelcome.innerHTML = handleWelcomeTime(date.getHours())
-determineStatus.innerHTML = date.getHours() >= 0 &&  date.getHours() <= 19 ? "today" : "tonight"
+determineStatus.innerHTML = date.getHours() >= 0 &&  date.getHours() <= 19 ? "tonight" : "today"
 dateToday.innerHTML = date.getDate()
 dateMonth.innerHTML = monthNames[date.getMonth()]
 
