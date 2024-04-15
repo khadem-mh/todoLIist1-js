@@ -23,18 +23,19 @@ dateMonth.innerHTML = monthNames[date.getMonth()]
 
 const checkForExistTextList = () => {
     if (localStorage.getItem('ListTodos')) {
-        if (localStorage.getItem('ListTodos').length > 1) {
-            console.log(2);
+        if (JSON.parse(localStorage.getItem('ListTodos')).length > 1) {
+            JSON.parse(localStorage.getItem('ListTodos')).forEach(item => {
+                parentMyList.insertAdjacentHTML('beforeend', `
+                    <li class="active-list"> ${item.value} <i class="bi bi-x"></i></li>
+                `)
+            })
         } else {
-            console.log(1);
-        }
-        JSON.parse(localStorage.getItem('ListTodos'))
-        parentMyList.insertAdjacentHTML('beforeend', `
-            <li class="active-list"> ${JSON.parse(localStorage.getItem('ListTodos'))} <i class="bi bi-x"></i></li>
+            parentMyList.insertAdjacentHTML('beforeend', `
+            <li class="active-list"> ${JSON.parse(localStorage.getItem('ListTodos')).value} <i class="bi bi-x"></i></li>
         `)
+        }
 
-        
-    } 
+    }
 }
 
 const addNewListHandler = () => {
