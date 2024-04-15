@@ -44,13 +44,9 @@ const btnSetNewNameListHandler = () => {
                 },
             ]
             localStorage.setItem('ListTodos', JSON.stringify(objVal))
-        } else {
-            localStorage.setItem('ListTodos', JSON.stringify({
-                id: localStorage.length + 1,
-                value: inpName
-            }))
+        } else localStorage.setItem('ListTodos', JSON.stringify({ id: localStorage.length + 1, value: inpName }))
 
-        }
+
 
 
 
