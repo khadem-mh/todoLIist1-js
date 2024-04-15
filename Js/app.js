@@ -21,6 +21,22 @@ dateMonth.innerHTML = monthNames[date.getMonth()]
 
 //Funcs
 
+const checkForExistTextList = () => {
+    if (localStorage.getItem('ListTodos')) {
+        if (localStorage.getItem('ListTodos').length > 1) {
+            console.log(2);
+        } else {
+            console.log(1);
+        }
+        JSON.parse(localStorage.getItem('ListTodos'))
+        parentMyList.insertAdjacentHTML('beforeend', `
+            <li class="active-list"> ${JSON.parse(localStorage.getItem('ListTodos'))} <i class="bi bi-x"></i></li>
+        `)
+
+        
+    } 
+}
+
 const addNewListHandler = () => {
     if (parentModal.classList.contains('modal-hide')) handleMangeClass(parentModal, 'modal-visible', 'modal-hide')
     else handleMangeClass(parentModal, 'modal-visible', 'modal-hide')
@@ -80,3 +96,4 @@ btnSetNewNameList.addEventListener('click', btnSetNewNameListHandler)
 btnCloseModal.addEventListener('click', btnCloseModalHandler)
 inpNewListName.addEventListener('keydown', inputKeyCodeHandler)
 window.addEventListener('keydown', closeKeyCodeHandler)
+window.addEventListener('load', checkForExistTextList)
