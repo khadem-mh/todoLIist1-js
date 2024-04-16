@@ -53,15 +53,17 @@ const btnSetNewNameListHandler = () => {
         handleMangeClass(parentModal, 'modal-hide', 'modal-visible')
 
         if (localStorage.getItem('list-todos')) {
-            let datasPast = localStorage.getItem('list-todos')
+            let datasPast = JSON.parse(localStorage.getItem('list-todos'))
             let newList = {
                 id: localStorage.length + 1,
                 value: inpName,
                 active: false
             }
-            console.log(datasPast);
+
             localStorage.removeItem('list-todos')
-            localStorage.setItem('list-todos', [JSON.stringify([datasPast]).slice(1, JSON.stringify([datasPast]).length - 1), JSON.stringify(newList)])
+            console.log(datasPast);
+            localStorage.setItem('list-todos', JSON.stringify(datasPast, newList))
+
 
         } else localStorage.setItem('list-todos', JSON.stringify({ id: localStorage.length + 1, value: inpName, active: true }))
 
