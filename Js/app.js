@@ -15,7 +15,7 @@ const btnCloseModal = document.querySelector('#btnCloseModal')
 
 const date = new Date()
 titleWelcome.innerHTML = handleWelcomeTime(date.getHours())
-determineStatus.innerHTML = date.getHours() >= 24 && date.getHours() <= 19 ? "today" : "tonight"
+determineStatus.innerHTML = date.getHours() >= 1 && date.getHours() <= 19 ? "today" : "tonight"
 dateToday.innerHTML = date.getDate()
 dateMonth.innerHTML = monthNames[date.getMonth()]
 
@@ -54,18 +54,17 @@ const btnSetNewNameListHandler = () => {
 
         if (localStorage.getItem('ListTodos')) {
             let objVal = [
-                JSON.parse(localStorage.getItem('ListTodos')),
+                ... JSON.parse(localStorage.getItem('ListTodos')),
                 {
                     id: localStorage.length + 1,
-                    value: inpName
-                },
+                    value: inpName,
+                    active: false
+                }
             ]
+            localStorage.clear('ListTodos')
             localStorage.setItem('ListTodos', JSON.stringify(objVal))
+
         } else localStorage.setItem('ListTodos', JSON.stringify({ id: localStorage.length + 1, value: inpName }))
-
-
-
-
 
         parentMyList.insertAdjacentHTML('beforeend', `
             <li class="active-list"> ${inpName} <i class="bi bi-x"></i></li>
