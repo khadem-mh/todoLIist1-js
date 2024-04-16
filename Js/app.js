@@ -22,16 +22,16 @@ dateMonth.innerHTML = monthNames[date.getMonth()]
 //Funcs
 
 const checkForExistTextList = () => {
-    if (localStorage.getItem('ListTodos')) {
-        if (JSON.parse(localStorage.getItem('ListTodos')).length > 1) {
-            JSON.parse(localStorage.getItem('ListTodos')).forEach(item => {
+    if (localStorage.getItem('list-todos')) {
+        if (JSON.parse(localStorage.getItem('list-todos')).length > 1) {
+            JSON.parse(localStorage.getItem('list-todos')).forEach(item => {
                 parentMyList.insertAdjacentHTML('beforeend', `
                     <li class="active-list"> ${item.value} <i class="bi bi-x"></i></li>
                 `)
             })
         } else {
             parentMyList.insertAdjacentHTML('beforeend', `
-            <li class="active-list"> ${JSON.parse(localStorage.getItem('ListTodos')).value} <i class="bi bi-x"></i></li>
+            <li class="active-list"> ${JSON.parse(localStorage.getItem('list-todos')).value} <i class="bi bi-x"></i></li>
         `)
         }
 
@@ -52,19 +52,18 @@ const btnSetNewNameListHandler = () => {
     if (inpName.length) {
         handleMangeClass(parentModal, 'modal-hide', 'modal-visible')
 
-        if (localStorage.getItem('ListTodos')) {
-            let objVal = [
-                ... JSON.parse(localStorage.getItem('ListTodos')),
-                {
-                    id: localStorage.length + 1,
-                    value: inpName,
-                    active: false
-                }
-            ]
-            localStorage.clear('ListTodos')
-            localStorage.setItem('ListTodos', JSON.stringify(objVal))
+        if (localStorage.getItem('list-todos')) {
+            let datasPast = JSON.parse(localStorage.getItem('list-todos'))
+            let newList = {
+                id: localStorage.length + 1,
+                value: inpName,
+                active: false
+            }
+            localStorage.removeItem('list-todos')
+            console.log([JSON.stringify([datasPast]).slice(1, JSON.stringify([datasPast, newList]).length - 1), JSON.stringify(newList)]);
+            //localStorage.setItem('list-todos', [])
 
-        } else localStorage.setItem('ListTodos', JSON.stringify({ id: localStorage.length + 1, value: inpName }))
+        } else localStorage.setItem('list-todos', JSON.stringify({ id: localStorage.length + 1, value: inpName, active: true }))
 
         parentMyList.insertAdjacentHTML('beforeend', `
             <li class="active-list"> ${inpName} <i class="bi bi-x"></i></li>
