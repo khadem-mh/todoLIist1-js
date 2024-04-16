@@ -61,9 +61,8 @@ const btnSetNewNameListHandler = () => {
             }
 
             localStorage.removeItem('list-todos')
-            console.log(datasPast);
-            localStorage.setItem('list-todos', JSON.stringify(datasPast, newList))
-
+            console.log(typeof datasPast.constructor);
+            localStorage.setItem('list-todos', JSON.stringify([datasPast, newList]))
 
         } else localStorage.setItem('list-todos', JSON.stringify({ id: localStorage.length + 1, value: inpName, active: true }))
 
