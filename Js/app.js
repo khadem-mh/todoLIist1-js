@@ -12,6 +12,7 @@ const dateMonth = document.querySelector('.month')
 const dateToday = document.querySelector('.today')
 const determineStatus = document.querySelector('.determine-status')
 const btnCloseModal = document.querySelector('#btnCloseModal')
+const addTodoBtn = document.querySelector('#addTodoBtn')
 
 const date = new Date()
 titleWelcome.innerHTML = handleWelcomeTime(date.getHours())
@@ -20,6 +21,10 @@ dateToday.innerHTML = date.getDate()
 dateMonth.innerHTML = monthNames[date.getMonth()]
 
 //Funcs
+
+const test = (e) => {
+    console.log(e);
+}
 
 const checkForExistTextList = () => {
     if (localStorage.getItem('list-todos')) {
