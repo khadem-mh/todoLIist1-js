@@ -13,6 +13,7 @@ const dateToday = document.querySelector('.today')
 const determineStatus = document.querySelector('.determine-status')
 const btnCloseModal = document.querySelector('#btnCloseModal')
 const addTodoBtn = document.querySelector('#addTodoBtn')
+const inputNewTodo = document.querySelector('#inputNewTodo')
 
 const date = new Date()
 titleWelcome.innerHTML = handleWelcomeTime(date.getHours())
