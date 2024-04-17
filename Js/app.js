@@ -95,10 +95,15 @@ const btnCloseModalHandler = () => {
     handleMangeClass(parentModal, 'modal-hide', 'modal-visible')
 }
 
+const addTodoBtnHandler = () => {
+    
+}
+
 //Events
 addNewList.addEventListener('click', addNewListHandler)
 btnSetNewNameList.addEventListener('click', btnSetNewNameListHandler)
 btnCloseModal.addEventListener('click', btnCloseModalHandler)
 inpNewListName.addEventListener('keydown', inputKeyCodeHandler)
+addTodoBtn.addEventListener('click', addTodoBtnHandler)
 window.addEventListener('keydown', closeKeyCodeHandler)
 window.addEventListener('load', checkForExistTextList)
