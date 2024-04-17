@@ -58,7 +58,7 @@ const btnSetNewNameListHandler = () => {
         handleMangeClass(parentModal, 'modal-hide', 'modal-visible')
 
         if (localStorage.getItem('list-todos')) {
-            
+
             let datasPast = JSON.parse(localStorage.getItem('list-todos'))
             let newList = {
                 id: localStorage.length + 1,
@@ -67,7 +67,7 @@ const btnSetNewNameListHandler = () => {
             }
             localStorage.removeItem('list-todos')
             if (datasPast.constructor === Array) localStorage.setItem('list-todos', JSON.stringify([...datasPast, newList]))
-            else  localStorage.setItem('list-todos', JSON.stringify([datasPast, newList]))
+            else localStorage.setItem('list-todos', JSON.stringify([datasPast, newList]))
 
         } else localStorage.setItem('list-todos', JSON.stringify({ id: localStorage.length + 1, value: inpName, active: true }))
 
@@ -95,8 +95,8 @@ const btnCloseModalHandler = () => {
     handleMangeClass(parentModal, 'modal-hide', 'modal-visible')
 }
 
-const addTodoBtnHandler = () => {
-    
+const addTodoBtnHandler = (e) => {
+    console.log(e);
 }
 
 //Events
