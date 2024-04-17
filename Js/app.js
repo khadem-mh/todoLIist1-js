@@ -97,7 +97,10 @@ const btnCloseModalHandler = () => {
 }
 
 const addTodoBtnHandler = (e) => {
-    console.log(e);
+    console.log(inputNewTodo.value);
+    if (inputNewTodo.value.length > 1) {
+        console.log('ok');
+    }
 }
 
 //Events
