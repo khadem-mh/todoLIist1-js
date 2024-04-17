@@ -96,7 +96,8 @@ const btnCloseModalHandler = () => {
     handleMangeClass(parentModal, 'modal-hide', 'modal-visible')
 }
 
-const addTodoBtnHandler = (e) => {
+const addTodoBtnHandler = e => {
+    e.preventDefault()
     console.log(inputNewTodo.value);
     if (inputNewTodo.value.length > 1) {
         console.log('ok');
