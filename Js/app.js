@@ -15,6 +15,8 @@ const btnCloseModal = document.querySelector('#btnCloseModal')
 const addTodoBtn = document.querySelector('#addTodoBtn')
 const inputNewTodo = document.querySelector('#inputNewTodo')
 const parentTodos = document.querySelector('#parentTodos')
+//
+let nameListActive = ''
 
 const date = new Date()
 titleWelcome.innerHTML = handleWelcomeTime(date.getHours())
@@ -88,7 +90,7 @@ const btnSetNewNameListHandler = () => {
         }
 
     }
-
+    nameListActive = inpNewListName.value
     inpNewListName.value = ''
 }
 
@@ -100,22 +102,23 @@ const btnCloseModalHandler = () => {
 
 const addTodoBtnHandler = e => {
     e.preventDefault()
-    if (inputNewTodo.value.length > 1) {
+    let inputValTodo = inputNewTodo.value
+    if (inputValTodo.length > 1) {
         let dateSaveTodo = date.getMonth() + 1 + '/' + date.getDate() + '/' + date.getFullYear()
         
         parentTodos.insertAdjacentHTML('beforeend', `
-        <div class="user-todo">
+            <div class="user-todo">
 
                 <div class="user-todo__left">
                     <input type="checkbox">
                     <div class="user-todo__info">
                         <p class="user-todo__date">${dateSaveTodo}</p>
-                        <p class="user-todo__text">go to gym and help the dad</p>
+                        <p class="user-todo__text">${inputValTodo}</p>
                     </div>
                 </div>
 
                 <div class="user-todo__right">
-                    <p class="user-todo__list"># project A</p>
+                    <p class="user-todo__list"># Li - ${nameListActive}</p>
                     <i class="bi bi-x"></i>
                 </div>
 
