@@ -14,6 +14,7 @@ const determineStatus = document.querySelector('.determine-status')
 const btnCloseModal = document.querySelector('#btnCloseModal')
 const addTodoBtn = document.querySelector('#addTodoBtn')
 const inputNewTodo = document.querySelector('#inputNewTodo')
+const parentTodos = document.querySelector('#parentTodos')
 
 const date = new Date()
 titleWelcome.innerHTML = handleWelcomeTime(date.getHours())
@@ -98,9 +99,9 @@ const btnCloseModalHandler = () => {
 
 const addTodoBtnHandler = e => {
     e.preventDefault()
-    console.log(inputNewTodo.value);
     if (inputNewTodo.value.length > 1) {
-        console.log('ok');
+        
+        inputNewTodo.value = ''
     }
 }
 
