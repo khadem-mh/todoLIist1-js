@@ -1,16 +1,12 @@
-import monthNames from "./monthNames.js"
 import handleMangeClass from "./Funcs/handleMangeClass.js"
-import handleWelcomeTime from "./Funcs/handleWelcomeTime.js"
+import welcomUser from "./welcomUser.js"
+
 //Elements
 const parentMyList = document.querySelector('#parentMyList')
 const addNewList = document.querySelector('#addNewList')
 const inpNewListName = document.querySelector('#inpNewListName')
 const btnSetNewNameList = document.querySelector('#btnSetNewNameList')
 const parentModal = document.querySelector('#parentModal')
-const titleWelcome = document.querySelector('.title-main')
-const dateMonth = document.querySelector('.month')
-const dateToday = document.querySelector('.today')
-const determineStatus = document.querySelector('.determine-status')
 const btnCloseModal = document.querySelector('#btnCloseModal')
 const addTodoBtn = document.querySelector('#addTodoBtn')
 const inputNewTodo = document.querySelector('#inputNewTodo')
@@ -18,17 +14,10 @@ const parentTodos = document.querySelector('#parentTodos')
 //
 let nameListActive = ''
 
-const date = new Date()
-titleWelcome.innerHTML = handleWelcomeTime(date.getHours())
-determineStatus.innerHTML = date.getHours() >= 1 && date.getHours() <= 19 ? "today" : "tonight"
-dateToday.innerHTML = date.getDate()
-dateMonth.innerHTML = monthNames[date.getMonth()]
 
 //Funcs
 
-const test = (e) => {
-    console.log(e);
-}
+welcomUser()
 
 const checkForExistTextList = () => {
     if (localStorage.getItem('list-todos')) {
@@ -98,7 +87,6 @@ const btnCloseModalHandler = () => {
     inpNewListName.value = ''
     handleMangeClass(parentModal, 'modal-hide', 'modal-visible')
 }
-
 
 const addTodoBtnHandler = e => {
     e.preventDefault()
