@@ -101,6 +101,25 @@ const addTodoBtnHandler = e => {
     e.preventDefault()
     if (inputNewTodo.value.length > 1) {
         
+        parentTodos.insertAdjacentHTML('beforeend', `
+        <div class="user-todo">
+
+        <div class="user-todo__left">
+                <input type="checkbox">
+                <div class="user-todo__info">
+                        <p class="user-todo__date">4/3/2024</p>
+                        <p class="user-todo__text">go to gym and help the dad</p>
+                    </div>
+                </div>
+
+                <div class="user-todo__right">
+                    <p class="user-todo__list"># project A</p>
+                    <i class="bi bi-x"></i>
+                </div>
+
+            </div>
+        `)
+
         inputNewTodo.value = ''
     }
 }
