@@ -97,17 +97,19 @@ const btnCloseModalHandler = () => {
     handleMangeClass(parentModal, 'modal-hide', 'modal-visible')
 }
 
+
 const addTodoBtnHandler = e => {
     e.preventDefault()
     if (inputNewTodo.value.length > 1) {
+        let dateSaveTodo = date.getMonth() + 1 + '/' + date.getDate() + '/' + date.getFullYear()
         
         parentTodos.insertAdjacentHTML('beforeend', `
         <div class="user-todo">
 
-        <div class="user-todo__left">
-                <input type="checkbox">
-                <div class="user-todo__info">
-                        <p class="user-todo__date">4/3/2024</p>
+                <div class="user-todo__left">
+                    <input type="checkbox">
+                    <div class="user-todo__info">
+                        <p class="user-todo__date">${dateSaveTodo}</p>
                         <p class="user-todo__text">go to gym and help the dad</p>
                     </div>
                 </div>
