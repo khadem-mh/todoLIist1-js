@@ -13,7 +13,7 @@ const inputNewTodo = document.querySelector('#inputNewTodo')
 const parentTodos = document.querySelector('#parentTodos')
 //
 let nameListActive = ''
-
+const date = new Date()
 
 //Funcs
 
