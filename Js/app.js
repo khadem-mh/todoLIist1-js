@@ -56,11 +56,15 @@ const btnSetNewNameListHandler = () => {
             let newList = {
                 id: localStorage.length + 1,
                 value: inpName,
-                active: false
+                active: true
             }
             localStorage.removeItem('list-todos')
-            if (datasPast.constructor === Array) localStorage.setItem('list-todos', JSON.stringify([...datasPast, newList]))
-            else localStorage.setItem('list-todos', JSON.stringify([datasPast, newList]))
+            if (datasPast.constructor === Array) {
+                datasPast.map(item => item.active && (item.active = false))
+                localStorage.setItem('list-todos', JSON.stringify([...datasPast, newList]))
+            }
+            else
+                localStorage.setItem('list-todos', JSON.stringify([datasPast, newList]))
 
         } else localStorage.setItem('list-todos', JSON.stringify({ id: localStorage.length + 1, value: inpName, active: true }))
 
@@ -93,7 +97,7 @@ const addTodoBtnHandler = e => {
     let inputValTodo = inputNewTodo.value
     if (inputValTodo.length > 1) {
         let dateSaveTodo = date.getMonth() + 1 + '/' + date.getDate() + '/' + date.getFullYear()
-        
+
         parentTodos.insertAdjacentHTML('beforeend', `
             <div class="user-todo">
 
