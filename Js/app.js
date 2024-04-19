@@ -81,7 +81,7 @@ const btnSetNewNameListHandler = () => {
         } else localStorage.setItem('list-todos', JSON.stringify({ id: localStorage.length + 1, value: inpName, active: true }))
 
         parentMyList.insertAdjacentHTML('beforeend', `
-            <li class="active-list"> ${inpName} <i class="bi bi-x btnCloseList" onclick="${btnCloseListHandler}"></i></li>
+            <li class="active-list"> ${inpName} <i class="bi bi-x btnCloseList" onclick="${btnCloseListHandler()}"></i></li>
         `)
         selectItemList()
     }
