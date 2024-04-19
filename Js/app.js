@@ -11,7 +11,7 @@ const btnCloseModal = document.querySelector('#btnCloseModal')
 const addTodoBtn = document.querySelector('#addTodoBtn')
 const inputNewTodo = document.querySelector('#inputNewTodo')
 const parentTodos = document.querySelector('#parentTodos')
-const btnCloseList = document.querySelector('#btnCloseList')
+const btnCloseList = document.querySelector('.btnCloseList')
 //
 let nameListActive = ''
 const date = new Date()
@@ -42,7 +42,7 @@ const checkForExistTextList = () => {
             })
         } else {
             parentMyList.insertAdjacentHTML('beforeend', `
-            <li class="active-list"> ${JSON.parse(localStorage.getItem('list-todos')).value} <i class="bi bi-x" id="btnCloseList"></i></li>
+            <li class="active-list"> ${JSON.parse(localStorage.getItem('list-todos')).value} <i class="bi bi-x btnCloseList"></i></li>
         `)
         }
         selectItemList()
@@ -82,7 +82,7 @@ const btnSetNewNameListHandler = () => {
         } else localStorage.setItem('list-todos', JSON.stringify({ id: localStorage.length + 1, value: inpName, active: true }))
 
         parentMyList.insertAdjacentHTML('beforeend', `
-            <li class="active-list"> ${inpName} <i class="bi bi-x"></i></li>
+            <li class="active-list"> ${inpName} <i class="bi bi-x btnCloseList"></i></li>
         `)
         selectItemList()
     }
@@ -96,7 +96,7 @@ const btnCloseModalHandler = () => {
 }
 
 const btnCloseListHandler = () => {
-    
+    console.log('ok');
 }
 
 const addTodoBtnHandler = e => {
