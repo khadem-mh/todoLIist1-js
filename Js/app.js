@@ -11,6 +11,7 @@ const btnCloseModal = document.querySelector('#btnCloseModal')
 const addTodoBtn = document.querySelector('#addTodoBtn')
 const inputNewTodo = document.querySelector('#inputNewTodo')
 const parentTodos = document.querySelector('#parentTodos')
+const btnCloseList = document.querySelector('#btnCloseList')
 //
 let nameListActive = ''
 const date = new Date()
@@ -41,7 +42,7 @@ const checkForExistTextList = () => {
             })
         } else {
             parentMyList.insertAdjacentHTML('beforeend', `
-            <li class="active-list"> ${JSON.parse(localStorage.getItem('list-todos')).value} <i class="bi bi-x"></i></li>
+            <li class="active-list"> ${JSON.parse(localStorage.getItem('list-todos')).value} <i class="bi bi-x" id="btnCloseList"></i></li>
         `)
         }
         selectItemList()
@@ -129,5 +130,6 @@ btnSetNewNameList.addEventListener('click', btnSetNewNameListHandler)
 btnCloseModal.addEventListener('click', btnCloseModalHandler)
 inpNewListName.addEventListener('keydown', inputKeyCodeHandler)
 addTodoBtn.addEventListener('click', addTodoBtnHandler)
+btnCloseList.addEventListener('click', btnCloseListHandler)
 window.addEventListener('keydown', closeKeyCodeHandler)
 window.addEventListener('load', checkForExistTextList)
