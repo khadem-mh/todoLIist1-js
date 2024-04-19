@@ -19,6 +19,18 @@ const date = new Date()
 
 welcomUser()
 
+const selectItemList = () => {
+    if (Array.of(parentMyList)[0].children.length !== 1) {
+        let liItem = [...Array.of(parentMyList)[0].children]
+        liItem.slice(0, liItem.length - 1).forEach(item => {
+            if (item.classList.contains('active-list')) {
+                handleMangeClass(item, '', 'active-list')
+                item.children[0].remove()
+            }
+        })
+    }
+}
+
 const checkForExistTextList = () => {
     if (localStorage.getItem('list-todos')) {
         if (JSON.parse(localStorage.getItem('list-todos')).length > 1) {
@@ -32,7 +44,7 @@ const checkForExistTextList = () => {
             <li class="active-list"> ${JSON.parse(localStorage.getItem('list-todos')).value} <i class="bi bi-x"></i></li>
         `)
         }
-
+        selectItemList()
     }
 }
 
@@ -71,17 +83,7 @@ const btnSetNewNameListHandler = () => {
         parentMyList.insertAdjacentHTML('beforeend', `
             <li class="active-list"> ${inpName} <i class="bi bi-x"></i></li>
         `)
-
-        if (Array.of(parentMyList)[0].children.length !== 1) {
-            let liItem = [...Array.of(parentMyList)[0].children]
-            liItem.slice(0, liItem.length - 1).forEach(item => {
-                if (item.classList.contains('active-list')) {
-                    handleMangeClass(item, '', 'active-list')
-                    item.children[0].remove()
-                }
-            })
-        }
-
+        selectItemList()
     }
     nameListActive = inpNewListName.value
     inpNewListName.value = ''
