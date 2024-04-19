@@ -95,6 +95,10 @@ const btnCloseModalHandler = () => {
     handleMangeClass(parentModal, 'modal-hide', 'modal-visible')
 }
 
+const btnCloseListHandler = () => {
+    
+}
+
 const addTodoBtnHandler = e => {
     e.preventDefault()
     let inputValTodo = inputNewTodo.value
