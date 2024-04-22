@@ -58,7 +58,8 @@ const inputKeyCodeHandler = e => e.key === 'Enter' && btnSetNewNameListHandler()
 const closeKeyCodeHandler = e => e.key === 'Escape' && parentModal.classList.contains('modal-visible') && btnCloseModalHandler()
 
 const btnCloseListHandler = () => {
-    console.log('ok');
+    console.log(JSON.parse(localStorage.getItem('list-todos')));
+
 }
 
 const btnSetNewNameListHandler = () => {
