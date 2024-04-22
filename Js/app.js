@@ -85,9 +85,10 @@ const btnSetNewNameListHandler = () => {
         } else localStorage.setItem('list-todos', JSON.stringify({ id: localStorage.length + 1, value: inpName, active: true }))
 
         parentMyList.insertAdjacentHTML('beforeend', `
-            <li class="active-list"> ${inpName} <i class="bi bi-x btnCloseList" id="${btnCloseList}"></i></li>
+            <li class="active-list"> ${inpName} <span id="btnCloseList"><i class="bi bi-x btnCloseList"></i></span></li>
         `)
         selectItemList()
+        document.querySelector('#btnCloseList').addEventListener('click', btnCloseListHandler)
     }
     nameListActive = inpNewListName.value
     inpNewListName.value = ''
@@ -133,6 +134,5 @@ btnSetNewNameList.addEventListener('click', btnSetNewNameListHandler)
 btnCloseModal.addEventListener('click', btnCloseModalHandler)
 inpNewListName.addEventListener('keydown', inputKeyCodeHandler)
 addTodoBtn.addEventListener('click', addTodoBtnHandler)
-document.querySelector('#btnCloseList') && document.querySelector('#btnCloseList').addEventListener('click', btnCloseListHandler)
 window.addEventListener('keydown', closeKeyCodeHandler)
 window.addEventListener('load', checkForExistTextList)
