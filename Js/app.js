@@ -57,21 +57,25 @@ const inputKeyCodeHandler = e => e.key === 'Enter' && btnSetNewNameListHandler()
 
 const closeKeyCodeHandler = e => e.key === 'Escape' && parentModal.classList.contains('modal-visible') && btnCloseModalHandler()
 
-const btnCloseListHandler = (event) => {
-    console.log(event.target);
-    console.log(JSON.parse(localStorage.getItem('list-todos')));
+const btnCloseListHandler = ID => {
+    if (ID === undefined) {
+        localStorage.removeItem('list-todos')
+        parentMyList.innerHTML = ''
+    } 
+    
+
 }
 
 const btnSetNewNameListHandler = () => {
     let inpName = inpNewListName.value
     if (inpName.length) {
         handleMangeClass(parentModal, 'modal-hide', 'modal-visible')
-
+        let newList = {}
         if (localStorage.getItem('list-todos')) {
 
             let datasPast = JSON.parse(localStorage.getItem('list-todos'))
 
-            let newList = {
+            newList = {
                 id: datasPast.length ? datasPast.length : 1,
                 value: inpName,
                 active: true
@@ -92,7 +96,7 @@ const btnSetNewNameListHandler = () => {
         `)
         selectItemList()
 
-        document.querySelector('#btnCloseList').addEventListener('click', (e) => btnCloseListHandler(e))
+        document.querySelector('#btnCloseList').addEventListener('click', () => btnCloseListHandler(!newList.length && newList.id))
     }
     nameListActive = inpNewListName.value
     inpNewListName.value = ''
