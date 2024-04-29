@@ -107,12 +107,11 @@ const btnSetNewNameListHandler = () => {
         } else localStorage.setItem('list-todos', JSON.stringify({ id: 0, value: inpName, active: true }))
 
         parentMyList.insertAdjacentHTML('beforeend', `
-            <li class="active-list"> ${inpName} <span class="btnCloseList"><i class="bi bi-x"></i></span></li>
+            <li class="active-list"> ${inpName} <span class="btnCloseList" data-id="${newList.id}><i class="bi bi-x"></i></span></li>
         `)
         selectItemList()
 
         let btnCloseListElements = document.querySelectorAll('.btnCloseList');
-        console.log(btnCloseListElements);
         btnCloseListElements.forEach(element => {
             element.addEventListener('click', () => btnCloseListHandler(!newList.length && newList.id))
         })
