@@ -57,9 +57,9 @@ const inputKeyCodeHandler = e => e.key === 'Enter' && btnSetNewNameListHandler()
 
 const closeKeyCodeHandler = e => e.key === 'Escape' && parentModal.classList.contains('modal-visible') && btnCloseModalHandler()
 
-const btnCloseListHandler = () => {
+const btnCloseListHandler = (event) => {
+    console.log(event.target);
     console.log(JSON.parse(localStorage.getItem('list-todos')));
-
 }
 
 const btnSetNewNameListHandler = () => {
@@ -70,11 +70,13 @@ const btnSetNewNameListHandler = () => {
         if (localStorage.getItem('list-todos')) {
 
             let datasPast = JSON.parse(localStorage.getItem('list-todos'))
+
             let newList = {
-                id: localStorage.length + 1,
+                id: datasPast.length ? datasPast.length : 1,
                 value: inpName,
                 active: true
             }
+
             localStorage.removeItem('list-todos')
             if (datasPast.constructor === Array) {
                 datasPast.map(item => item.active && (item.active = false))
@@ -83,13 +85,14 @@ const btnSetNewNameListHandler = () => {
             else
                 localStorage.setItem('list-todos', JSON.stringify([datasPast, newList]))
 
-        } else localStorage.setItem('list-todos', JSON.stringify({ id: localStorage.length + 1, value: inpName, active: true }))
+        } else localStorage.setItem('list-todos', JSON.stringify({ id: 0, value: inpName, active: true }))
 
         parentMyList.insertAdjacentHTML('beforeend', `
             <li class="active-list"> ${inpName} <span id="btnCloseList"><i class="bi bi-x btnCloseList"></i></span></li>
         `)
         selectItemList()
-        document.querySelector('#btnCloseList').addEventListener('click', btnCloseListHandler)
+
+        document.querySelector('#btnCloseList').addEventListener('click', (e) => btnCloseListHandler(e))
     }
     nameListActive = inpNewListName.value
     inpNewListName.value = ''

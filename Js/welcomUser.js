@@ -9,7 +9,7 @@ import monthNames from "./monthNames.js"
 const welcomUser = () => {
     const date = new Date()
     titleWelcome.innerHTML = handleWelcomeTime(date.getHours())
-    determineStatus.innerHTML = date.getHours() >= 1 && date.getHours() <= 19 ? "today" : "tonight"
+    determineStatus.innerHTML = date.getHours() >= 1 && date.getHours() <= 18 ? "today" : "tonight"
     dateToday.innerHTML = date.getDate()
     dateMonth.innerHTML = monthNames[date.getMonth()]
 }
