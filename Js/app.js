@@ -58,11 +58,20 @@ const inputKeyCodeHandler = e => e.key === 'Enter' && btnSetNewNameListHandler()
 const closeKeyCodeHandler = e => e.key === 'Escape' && parentModal.classList.contains('modal-visible') && btnCloseModalHandler()
 
 const btnCloseListHandler = ID => {
+    const storage = JSON.parse(localStorage.getItem('list-todos'))
     if (ID === undefined) {
         localStorage.removeItem('list-todos')
         parentMyList.innerHTML = ''
-    } 
-    
+    } else {
+
+        const filterTodos = JSON.stringify(storage.filter(todo => todo.id !== ID))
+        
+        localStorage.removeItem('list-todos')
+        localStorage.setItem('list-todos', [filterTodos])
+
+
+    }
+
 
 }
 
