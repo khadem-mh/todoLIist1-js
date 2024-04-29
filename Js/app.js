@@ -68,14 +68,16 @@ const closeKeyCodeHandler = e => e.key === 'Escape' && parentModal.classList.con
 
 const btnCloseListHandler = ID => {
     console.log('ok');
-    const storage = JSON.parse(localStorage.getItem('list-todos'))
-    if (ID === undefined || ID === 0) {
+    console.log(ID);
+    if (ID == 0) {
         localStorage.removeItem('list-todos')
         parentMyList.innerHTML = ''
     } else {
-        const filterTodos = JSON.stringify(storage.filter(todo => todo.id !== ID))
+        const storage = JSON.parse(localStorage.getItem('list-todos'))
         localStorage.removeItem('list-todos')
-        localStorage.setItem('list-todos', [filterTodos])
+        const filterTodos = storage.filter(todo => todo.id != ID)
+        filterTodos[filterTodos.length - 1].active = true
+        localStorage.setItem('list-todos', [JSON.stringify(filterTodos)])
         parentMyList.innerHTML = ''
         checkForExistTextList()
     }
@@ -107,13 +109,15 @@ const btnSetNewNameListHandler = () => {
         } else localStorage.setItem('list-todos', JSON.stringify({ id: 0, value: inpName, active: true }))
 
         parentMyList.insertAdjacentHTML('beforeend', `
-            <li class="active-list"> ${inpName} <span class="btnCloseList" data-id="${newList.id}><i class="bi bi-x"></i></span></li>
+            <li class="active-list"> ${inpName} <span data-id="${newList.id === undefined ? 0 : newList.id}" class="btnCloseList"><i class="bi bi-x"></i></span></li>
         `)
         selectItemList()
 
-        let btnCloseListElements = document.querySelectorAll('.btnCloseList');
+        let btnCloseListElements = document.querySelectorAll('.btnCloseList')
+
         btnCloseListElements.forEach(element => {
-            element.addEventListener('click', () => btnCloseListHandler(!newList.length && newList.id))
+            let id = element.getAttribute('data-id')
+            element.addEventListener('click', () => btnCloseListHandler(id))
         })
     }
     nameListActive = inpNewListName.value
