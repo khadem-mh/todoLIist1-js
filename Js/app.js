@@ -33,7 +33,7 @@ const selectItemList = () => {
 
 const checkForExistTextList = () => {
     if (localStorage.getItem('list-todos')) {
-
+        console.log('ok');
         const datasList = JSON.parse(localStorage.getItem('list-todos'))
 
         if (datasList.length > 1) {
@@ -46,13 +46,18 @@ const checkForExistTextList = () => {
 
         } else {
             parentMyList.insertAdjacentHTML('beforeend', `
-                <li class="active-list">  ${datasList.value}  <span class="btnCloseList"><i class="bi bi-x"></i></span></li>
+                <li class="active-list" data-id="0"> ${JSON.parse(localStorage.getItem('list-todos'))[0] ? JSON.parse(localStorage.getItem('list-todos'))[0].value : JSON.parse(localStorage.getItem('list-todos')).value} <span class="btnCloseList"><i class="bi bi-x"></i></span></li>
             `)
         }
 
-        document.querySelector('.btnCloseList').addEventListener('click', () => btnCloseListHandler(datasList.length - 1))
-
         selectItemList()
+
+        let btnCloseListElements = document.querySelectorAll('.btnCloseList')
+
+        btnCloseListElements.forEach(element => {
+            let id = element.parentElement.getAttribute('data-id')
+            element.addEventListener('click', () => btnCloseListHandler(id))
+        })
 
     }
 }
