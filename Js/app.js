@@ -37,10 +37,10 @@ const checkForExistTextList = () => {
         const datasList = JSON.parse(localStorage.getItem('list-todos'))
 
         if (datasList.length > 1) {
-
+            let indexID = 0
             datasList.forEach(item => {
                 parentMyList.insertAdjacentHTML('beforeend', `
-                    <li class="active-list"> ${item.value}  <span class="btnCloseList"><i class="bi bi-x"></i></span></li>
+                    <li class="active-list" data-id="${indexID++}"> ${item.value} <span class="btnCloseList"><i class="bi bi-x"></i></span></li>
                 `)
             })
 
@@ -77,6 +77,7 @@ const btnCloseListHandler = ID => {
         const filterTodos = storage.filter(todo => todo.id != ID)
         filterTodos[filterTodos.length - 1].active = true
         localStorage.setItem('list-todos', [JSON.stringify(filterTodos)])
+        parentMyList.innerHTML = ''
         checkForExistTextList()
     }
 }
