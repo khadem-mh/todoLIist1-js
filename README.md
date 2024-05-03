@@ -16,6 +16,10 @@ Build a professional and beautiful todolist with the ability to drag and drop, a
 >### Packages
 >> ![](https://readme-typing-svg.demolab.com?font=Fira+Code&size=16&duration=1500&pause=5000&color=CB58F7FF&random=false&width=150&height=25&lines=Bootstrap+Icons)
 
+## View of the Project
+
+add text to feature
+
 ## Useage
 
 Before running the project, it is necessary to install npm on your system, then you can put the following command in the path of the project
